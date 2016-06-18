@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		ansible.host_key_checking = "false"
 		ansible.limit = "all"
 	end
-	config.vm.provision "shell" do |shell| shell.inline = "wget -c -P /vagrant/ https://wordpress.org/latest.zip && wget -c -P /vagrant/ https://github.com/zaproxy/zaproxy/releases/download/2.5.0/ZAP_2.5.0_Linux.tar.gz"
+	config.vm.provision "shell" do |shell| shell.inline = "wget -c -P /vagrant/ https://wordpress.org/latest.zip && wget -c -P /vagrant/ https://github.com/zaproxy/zaproxy/releases/download/2.5.0/ZAP_2.5.0_Linux.tar.gz&& sleep 4 && reboot"
 	end
 	config.vm.provider :virtualbox do |vb|
 		vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]

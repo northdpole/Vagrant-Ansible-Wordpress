@@ -146,3 +146,6 @@
         - default-jre
         - firefox
         - chromium-browser
+        - virtualbox-guest-x11
+        - lightdm
+    - user: name=user shell=/bin/zsh password=vagrant
